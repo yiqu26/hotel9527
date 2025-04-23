@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>預約客房 - 舒適旅館</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 導航欄 -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h1>舒適旅館</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">首頁</a></li>
+                <li><a href="rooms.html">客房</a></li>
+                <li><a href="#" class="active">預約</a></li>
+                <li><a href="#" id="login-btn">登入</a></li>
+                <li><a href="#" id="register-btn">註冊</a></li>
+            </ul>
+            <div class="hamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 預約頁面標題 -->
+    <div class="page-header">
+        <div class="container">
+            <h1>預約客房</h1>
+            <p>填寫以下表單完成您的預約</p>
+        </div>
+    </div>
+
+    <!-- 預約流程說明 -->
+    <section class="booking-process">
+        <div class="container">
+            <h2 class="section-title">預約流程</h2>
+            <div class="process-steps">
+                <div class="process-step active">
+                    <div class="step-number">1</div>
+                    <div class="step-text">選擇房型</div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-text">填寫資料</div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-text">確認預約</div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <div class="step-text">完成預約</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 預約表單 -->
+    <section class="booking-form-section">
+        <div class="container">
+            <div class="booking-container">
+                <div class="booking-form">
+                    <h2>預約資訊</h2>
+                    <form id="booking-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="room-type">選擇房型*</label>
+                                <select id="room-type" name="room-type" required>
+                                    <option value="">請選擇房型</option>
+                                    <option value="single">單人精緻房</option>
+                                    <option value="double">豪華雙人房</option>
+                                    <option value="family">家庭套房</option>
+                                    <option value="suite">豪華套房 (已滿房)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="guests">人數*</label>
+                                <select id="guests" name="guests" required>
+                                    <option value="1">1人</option>
+                                    <option value="2">2人</option>
+                                    <option value="3">3人</option>
+                                    <option value="4">4人</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="check-in">入住日期*</label>
+                                <input type="date" id="check-in" name="check-in" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="check-out">退房日期*</label>
+                                <input type="date" id="check-out" name="check-out" required>
+                            </div>
+                        </div>
+                        <h3>入住者資訊</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="fullname">姓名*</label>
+                                <input type="text" id="fullname" name="fullname" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="id-number">身分證號碼*</label>
+                                <input type="text" id="id-number" name="id-number" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">聯絡電話*</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">電子信箱*</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="emergency-contact">緊急聯絡人*</label>
+                                <input type="text" id="emergency-contact" name="emergency-contact" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="emergency-phone">緊急聯絡電話*</label>
+                                <input type="tel" id="emergency-phone" name="emergency-phone" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="special-requests">特殊要求</label>
+                            <textarea id="special-requests" name="special-requests" rows="3" placeholder="如有任何特殊需求，請在此說明"></textarea>
+                        </div>
+                        <div class="form-group payment">
+                            <h3>付款方式</h3>
+                            <div class="payment-options">
+                                <label class="payment-option">
+                                    <input type="radio" name="payment" value="credit-card" checked>
+                                    <span class="checkmark"></span>
+                                    <i class="fas fa-credit-card"></i> 信用卡
+                                </label>
+                                <label class="payment-option">
+                                    <input type="radio" name="payment" value="cash">
+                                    <span class="checkmark"></span>
+                                    <i class="fas fa-money-bill-wave"></i> 現場付款
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group terms">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="terms" required>
+                                <span class="checkmark"></span>
+                                我已閱讀並同意<a href="#">預約條款及細則</a>
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">確認預約</button>
+                    </form>
+                </div>
+                <div class="booking-summary">
+                    <h2>預約摘要</h2>
+                    <div class="summary-content">
+                        <div class="summary-item">
+                            <span class="summary-label">房型:</span>
+                            <span class="summary-value" id="summary-room-type">-</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">入住日期:</span>
+                            <span class="summary-value" id="summary-check-in">-</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">退房日期:</span>
+                            <span class="summary-value" id="summary-check-out">-</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">住宿天數:</span>
+                            <span class="summary-value" id="summary-nights">-</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">人數:</span>
+                            <span class="summary-value" id="summary-guests">-</span>
+                        </div>
+                        <hr>
+                        <div class="summary-item">
+                            <span class="summary-label">每晚房價:</span>
+                            <span class="summary-value" id="summary-price-per-night">-</span>
+                        </div>
+                        <div class="summary-item total">
+                            <span class="summary-label">總計:</span>
+                            <span class="summary-value" id="summary-total">-</span>
+                        </div>
+                    </div>
+                    <div class="room-image" id="summary-image">
+                        <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a" alt="選定的房型">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 登入彈窗 -->
+    <div class="modal" id="login-modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>會員登入</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="login-account">帳號:</label>
+                    <input type="text" id="login-account" name="login-account" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">密碼:</label>
+                    <input type="password" id="login-password" name="login-password" required>
+                </div>
+                <button type="submit" class="btn">登入</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 註冊彈窗 -->
+    <div class="modal" id="register-modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>會員註冊</h2>
+            <form id="register-form">
+                <div class="form-group">
+                    <label for="register-account">帳號:</label>
+                    <input type="text" id="register-account" name="register-account" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-password">密碼:</label>
+                    <input type="password" id="register-password" name="register-password" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-name">姓名:</label>
+                    <input type="text" id="register-name" name="register-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-id">身分證號碼:</label>
+                    <input type="text" id="register-id" name="register-id" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-gender">性別:</label>
+                    <select id="register-gender" name="register-gender">
+                        <option value="">請選擇</option>
+                        <option value="male">男</option>
+                        <option value="female">女</option>
+                        <option value="other">其他</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="register-birthday">出生日期:</label>
+                    <input type="date" id="register-birthday" name="register-birthday" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-phone">電話:</label>
+                    <input type="tel" id="register-phone" name="register-phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-emergency">緊急聯絡人:</label>
+                    <input type="text" id="register-emergency" name="register-emergency" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-emergency-phone">緊急聯絡電話:</label>
+                    <input type="tel" id="register-emergency-phone" name="register-emergency-phone" required>
+                </div>
+                <button type="submit" class="btn">註冊</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 頁尾 -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>關於我們</h3>
+                    <p>舒適旅館提供優質住宿體驗，讓您的旅程更加愉快。</p>
+                </div>
+                <div class="footer-section">
+                    <h3>聯絡資訊</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 台北市中正區忠孝東路100號</p>
+                    <p><i class="fas fa-phone"></i> 02-1234-5678</p>
+                    <p><i class="fas fa-envelope"></i> info@comforthotel.com</p>
+                </div>
+                <div class="footer-section">
+                    <h3>關注我們</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 舒適旅館 版權所有</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html> 

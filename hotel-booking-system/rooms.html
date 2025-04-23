@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>客房一覽 - 舒適旅館</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 導航欄 -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h1>舒適旅館</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">首頁</a></li>
+                <li><a href="#" class="active">客房</a></li>
+                <li><a href="booking.html">預約</a></li>
+                <li><a href="#" id="login-btn">登入</a></li>
+                <li><a href="#" id="register-btn">註冊</a></li>
+            </ul>
+            <div class="hamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 客房頁面標題 -->
+    <div class="page-header">
+        <div class="container">
+            <h1>我們的客房</h1>
+            <p>為您提供舒適豪華的住宿環境</p>
+        </div>
+    </div>
+
+    <!-- 搜尋過濾區 -->
+    <section class="room-filter">
+        <div class="container">
+            <h2>尋找合適的房間</h2>
+            <form id="filter-form">
+                <div class="filter-group">
+                    <label for="check-in">入住日期:</label>
+                    <input type="date" id="check-in" name="check-in" required>
+                </div>
+                <div class="filter-group">
+                    <label for="check-out">退房日期:</label>
+                    <input type="date" id="check-out" name="check-out" required>
+                </div>
+                <div class="filter-group">
+                    <label for="guests">人數:</label>
+                    <select id="guests" name="guests">
+                        <option value="1">1人</option>
+                        <option value="2">2人</option>
+                        <option value="3">3人</option>
+                        <option value="4">4人</option>
+                        <option value="5">5人以上</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="room-type">房型:</label>
+                    <select id="room-type" name="room-type">
+                        <option value="all">全部房型</option>
+                        <option value="single">單人房</option>
+                        <option value="double">雙人房</option>
+                        <option value="family">家庭房</option>
+                        <option value="suite">豪華套房</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn">搜尋空房</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- 全部房型 -->
+    <section class="all-rooms">
+        <div class="container">
+            <h2 class="section-title">所有房型</h2>
+            
+            <div class="room-item">
+                <div class="room-image">
+                    <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32" alt="單人精緻房">
+                </div>
+                <div class="room-details">
+                    <div class="room-info">
+                        <h3>單人精緻房</h3>
+                        <div class="room-meta">
+                            <span><i class="fas fa-user"></i> 1人</span>
+                            <span><i class="fas fa-bed"></i> 單人床</span>
+                            <span><i class="fas fa-bath"></i> 獨立衛浴</span>
+                            <span><i class="fas fa-wifi"></i> 免費Wi-Fi</span>
+                        </div>
+                        <p>舒適的單人房，提供所有您所需的基本設施，適合商務旅客或單人旅行。配備高品質床墊、獨立工作區域及現代化衛浴設備。</p>
+                        <div class="room-status available">
+                            <span>目前狀態: 可預訂</span>
+                        </div>
+                    </div>
+                    <div class="room-booking">
+                        <div class="price">
+                            <span class="amount">NT$ 1,800</span>
+                            <span class="period">/ 晚</span>
+                        </div>
+                        <a href="booking.html?room=single" class="btn">立即預訂</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="room-item">
+                <div class="room-image">
+                    <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427" alt="豪華雙人房">
+                </div>
+                <div class="room-details">
+                    <div class="room-info">
+                        <h3>豪華雙人房</h3>
+                        <div class="room-meta">
+                            <span><i class="fas fa-user"></i> 2人</span>
+                            <span><i class="fas fa-bed"></i> 雙人床</span>
+                            <span><i class="fas fa-bath"></i> 獨立衛浴</span>
+                            <span><i class="fas fa-coffee"></i> 迷你吧台</span>
+                            <span><i class="fas fa-wifi"></i> 免費Wi-Fi</span>
+                        </div>
+                        <p>寬敞的雙人房，配備優質的 King Size 床墊，讓您與伴侶或朋友共享舒適的住宿體驗。房間內還有休息區、大型電視及迷你吧台，提供完美的放鬆環境。</p>
+                        <div class="room-status available">
+                            <span>目前狀態: 可預訂</span>
+                        </div>
+                    </div>
+                    <div class="room-booking">
+                        <div class="price">
+                            <span class="amount">NT$ 2,500</span>
+                            <span class="period">/ 晚</span>
+                        </div>
+                        <a href="booking.html?room=double" class="btn">立即預訂</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="room-item">
+                <div class="room-image">
+                    <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a" alt="家庭套房">
+                </div>
+                <div class="room-details">
+                    <div class="room-info">
+                        <h3>家庭套房</h3>
+                        <div class="room-meta">
+                            <span><i class="fas fa-user"></i> 4人</span>
+                            <span><i class="fas fa-bed"></i> 雙人床+兩單人床</span>
+                            <span><i class="fas fa-bath"></i> 獨立衛浴</span>
+                            <span><i class="fas fa-tv"></i> 客廳</span>
+                            <span><i class="fas fa-wifi"></i> 免費Wi-Fi</span>
+                        </div>
+                        <p>專為家庭設計的寬敞套房，包含主臥室和次臥室，適合4人家庭入住。配備獨立客廳、大型電視及迷你廚房，讓您的家庭旅行更加便利舒適。</p>
+                        <div class="room-status available">
+                            <span>目前狀態: 可預訂</span>
+                        </div>
+                    </div>
+                    <div class="room-booking">
+                        <div class="price">
+                            <span class="amount">NT$ 3,800</span>
+                            <span class="period">/ 晚</span>
+                        </div>
+                        <a href="booking.html?room=family" class="btn">立即預訂</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="room-item">
+                <div class="room-image">
+                    <img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461" alt="豪華套房">
+                </div>
+                <div class="room-details">
+                    <div class="room-info">
+                        <h3>豪華套房</h3>
+                        <div class="room-meta">
+                            <span><i class="fas fa-user"></i> 2人</span>
+                            <span><i class="fas fa-bed"></i> 加大雙人床</span>
+                            <span><i class="fas fa-bath"></i> 大理石衛浴</span>
+                            <span><i class="fas fa-hot-tub"></i> 私人按摩浴缸</span>
+                            <span><i class="fas fa-cocktail"></i> 迷你酒吧</span>
+                            <span><i class="fas fa-wifi"></i> 免費Wi-Fi</span>
+                        </div>
+                        <p>我們最豪華的房型，提供最高級的住宿體驗。套房內有寬敞的客廳、豪華臥室、大理石衛浴和私人按摩浴缸。此外還提供管家服務和迎賓水果籃，適合慶祝特殊場合。</p>
+                        <div class="room-status unavailable">
+                            <span>目前狀態: 已滿房</span>
+                        </div>
+                    </div>
+                    <div class="room-booking">
+                        <div class="price">
+                            <span class="amount">NT$ 5,800</span>
+                            <span class="period">/ 晚</span>
+                        </div>
+                        <button class="btn btn-disabled" disabled>無法預訂</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 登入彈窗 -->
+    <div class="modal" id="login-modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>會員登入</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="login-account">帳號:</label>
+                    <input type="text" id="login-account" name="login-account" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">密碼:</label>
+                    <input type="password" id="login-password" name="login-password" required>
+                </div>
+                <button type="submit" class="btn">登入</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 註冊彈窗 -->
+    <div class="modal" id="register-modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>會員註冊</h2>
+            <form id="register-form">
+                <div class="form-group">
+                    <label for="register-account">帳號:</label>
+                    <input type="text" id="register-account" name="register-account" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-password">密碼:</label>
+                    <input type="password" id="register-password" name="register-password" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-name">姓名:</label>
+                    <input type="text" id="register-name" name="register-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-id">身分證號碼:</label>
+                    <input type="text" id="register-id" name="register-id" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-gender">性別:</label>
+                    <select id="register-gender" name="register-gender">
+                        <option value="">請選擇</option>
+                        <option value="male">男</option>
+                        <option value="female">女</option>
+                        <option value="other">其他</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="register-birthday">出生日期:</label>
+                    <input type="date" id="register-birthday" name="register-birthday" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-phone">電話:</label>
+                    <input type="tel" id="register-phone" name="register-phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-emergency">緊急聯絡人:</label>
+                    <input type="text" id="register-emergency" name="register-emergency" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-emergency-phone">緊急聯絡電話:</label>
+                    <input type="tel" id="register-emergency-phone" name="register-emergency-phone" required>
+                </div>
+                <button type="submit" class="btn">註冊</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 頁尾 -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>關於我們</h3>
+                    <p>舒適旅館提供優質住宿體驗，讓您的旅程更加愉快。</p>
+                </div>
+                <div class="footer-section">
+                    <h3>聯絡資訊</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 台北市中正區忠孝東路100號</p>
+                    <p><i class="fas fa-phone"></i> 02-1234-5678</p>
+                    <p><i class="fas fa-envelope"></i> info@comforthotel.com</p>
+                </div>
+                <div class="footer-section">
+                    <h3>關注我們</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 舒適旅館 版權所有</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html> 
